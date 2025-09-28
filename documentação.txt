@@ -1,0 +1,21 @@
+b1827d1 = banner principal do site
+
+(
+ Texto principal: fazer vir do lado esquerdo até o ponto final. 
+ Sub texto: fazer vir de cima para o ponto final.
+ Fale Conosco: fazer vir de baixo até o ponto final.
+)
+
+bffbc59 = texto do banner 
+
+(  )	
+
+a6c8731 = sub texto do banner
+
+(  )
+
+f01a2d3 = imagem do estética e excelência em cada projeto
+
+d7743fd = Texto "Estética e excelência em cada projeto"
+
+88543e5 = Camada do "Depoimento de nossos clientes"

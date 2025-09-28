@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AllVale - Header</title>
+
+  <style>
+    /* Estilo do Header */
+    .site-header {
+      background: #000059;
+      color: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      padding: 15px 40px;
+    }
+
+    .header-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo img {
+      max-height: 60px;
+    }
+
+    /* Menu Desktop */
+    .main-menu ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 25px;
+    }
+
+    .main-menu a {
+      color: #fff;
+      text-decoration: none;
+      font-family: "Montserrat", sans-serif;
+      font-weight: 500;
+      font-size: 16px;
+      transition: color 0.3s;
+    }
+
+    .main-menu a:hover,
+    .main-menu a.active {
+      color: #FFCC00;
+    }
+
+    /* Submenus */
+    .has-submenu {
+      position: relative;
+    }
+
+    .has-submenu .submenu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: #222;
+      padding: 10px 0;
+      min-width: 200px;
+    }
+
+    .has-submenu:hover .submenu {
+      display: block;
+    }
+
+    .submenu li {
+      padding: 5px 15px;
+    }
+
+    .submenu a {
+      color: #fff;
+      font-size: 14px;
+    }
+
+    .submenu a:hover {
+      color: #FFCC00;
+    }
+
+    /* Botão hamburguer (mobile) */
+    .menu-toggle {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+      color: #fff;
+    }
+
+    /* Responsivo */
+    @media (max-width: 768px) {
+      .main-menu ul {
+        display: none;
+        flex-direction: column;
+        background: #000059;
+        position: absolute;
+        top: 80px;
+        right: 0;
+        width: 250px;
+        padding: 20px;
+      }
+
+      .main-menu ul.show {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .has-submenu:hover .submenu {
+        display: none; /* no mobile não abre com hover */
+      }
+
+      .has-submenu > a::after {
+        content: " ▼";
+        font-size: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-container">
+      <!-- Logo -->
+      <div class="logo">
+        <a href="index.html">
+          <img src="imgs/logo-principal.png" alt="AllVale">
+        </a>
+      </div>
+
+      <!-- Menu -->
+      <nav class="main-menu">
+        <ul>
+          <li><a href="index.html" class="active">Início</a></li>
+          <li><a href="sobre.html">Sobre Nós</a></li>
+          <li class="has-submenu">
+            <a href="portfolio.html">Portfólio</a>
+            <ul class="submenu">
+              <li><a href="portfolio.html">Portfólio</a></li>
+              <li><a href="casa-trevo.html">Casa Trevo</a></li>
+              <li><a href="casa-aem.html">Casa A&M</a></li>
+              <li><a href="casa-dm.html">Casa D.M</a></li>
+              <li><a href="casa-aer.html">Casa A&R</a></li>
+              <li><a href="casa-gm.html">Casa G.M</a></li>
+              <li><a href="casa-baraldi.html">Casa Baraldi</a></li>
+            </ul>
+          </li>
+          <li class="has-submenu">
+            <a href="produtos.html">Produtos</a>
+            <ul class="submenu">
+              <li><a href="produtos.html">Produtos</a></li>
+              <li><a href="linha-gold.html">Linha Gold IV</a></li>
+              <li><a href="coberturas.html">Coberturas e Pergolados</a></li>
+              <li><a href="linha-suprema.html">Linha Suprema AllVale</a></li>
+              <li><a href="linha-esmerium.html">Linha Esmerium</a></li>
+              <li><a href="portas.html">Portas de entrada / fachadas</a></li>
+            </ul>
+          </li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </nav>
+
+      <!-- Botão Mobile -->
+      <div class="menu-toggle" id="menu-toggle">☰</div>
+    </div>
+  </header>
+
+  <script>
+    // Script para abrir/fechar menu no mobile
+    document.getElementById("menu-toggle").addEventListener("click", function() {
+      document.querySelector(".main-menu ul").classList.toggle("show");
+    });
+  </script>
+</body>
+</html>
